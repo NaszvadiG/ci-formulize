@@ -13,7 +13,7 @@ Its usage is recommended for CodeIgniter 2 or greater.
 
 ## Usage
 
-In the controller:
+Load the library in the controller:
 
 ```php
 $this->load->library('formulize');
@@ -22,7 +22,11 @@ $this->load->library('formulize');
 In the view:
 
 ```php
-echo $this->formulize->create('Title', 'title', 'txt', 'value')->render(); // 'value' paramter is optional
+// $this->formulize->create($name, $varname, $type, $value);
+// $type could be 'txt', 'html', 'date', 'file' or 'checkbox'
+// $value paramter is optional.
+
+echo $this->formulize->create('Title', 'title', 'txt', 'New post')->render();
 
 echo $this->formulize->create('Text', 'text', 'html')->render();
 
