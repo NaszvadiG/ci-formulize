@@ -23,8 +23,8 @@ In the view:
 
 ```php
 // $this->formulize->create($name, $varname, $type, $value, $select_elements);
-// $type could be 'txt', 'html', 'date', 'file', 'checkbox' or 'select'
-// $value paramter is optional. $select_elements is required if $type is 'select'
+// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select' or 'list'
+// $value paramter is optional. $select_elements is required if $type is 'select' or 'list'
 
 echo $this->formulize->create('Title', 'title', 'txt', 'New post')->render();
 
@@ -42,6 +42,13 @@ $elements = array(
     'fashion'    => 'Fashion'
 );
 echo $this->formulize->create('Type', 'type', 'select', '', $elements)->render();
+
+$elements = array(
+    'sports'     => 'Sports',
+    'technology' => 'Technology',
+    'fashion'    => 'Fashion'
+);
+echo $this->formulize->create('Type', 'type', 'list', '', $elements)->render();
 ```
 
 You'll have to add the `/application/views/formulize/` folder in your project.
