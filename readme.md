@@ -51,6 +51,10 @@ $elements = array(
 echo $this->formulize->create('Type', 'type', 'list', '', $elements)->render();
 
 echo $this->formulize->create('Tags', 'tags', 'tags')->render();
+
+echo $this->formulize->create('Order', 'order', 'number')->render();
+
+echo $this->formulize->create('Email', 'email', 'email')->render();
 ```
 
 You'll have to add the `/application/views/formulize/` folder in your project.
