@@ -23,7 +23,7 @@ In the view:
 
 ```php
 // $this->formulize->create($name, $varname, $type, $value, $select_elements);
-// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'list' or 'tags'
+// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'list', 'tags', 'number' or 'email'
 // $value paramter is optional. $select_elements is required if $type is 'select' or 'list'
 
 echo $this->formulize->create('Title', 'title', 'txt', 'New post')->render();
