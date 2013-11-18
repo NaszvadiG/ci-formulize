@@ -22,9 +22,11 @@ $this->load->library('formulize');
 In the view:
 
 ```php
-// $this->formulize->create($name, $varname, $type, $value, $select_elements);
-// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'list', 'tags', 'number' or 'email'
-// $value paramter is optional. $select_elements is required if $type is 'select' or 'list'
+// $this->formulize->create($name, $varname, $type, $value, $select_elements, $select_pics);
+// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'selectpic', 'list', 'tags', 'number' or 'email'
+// $value paramter is optional.
+// $select_elements is required if $type is 'select', 'selectpic' or 'list'
+// $select_pics is required if $type is 'selectpic'
 
 echo $this->formulize->create('Title', 'title', 'txt', 'New post')->render();
 
@@ -42,6 +44,18 @@ $elements = array(
     'fashion'    => 'Fashion'
 );
 echo $this->formulize->create('Type', 'type', 'select', '', $elements)->render();
+
+$elements = array(
+    'sport' => 'Sport',
+    'music' => 'Music',
+    'paint' => 'Paint'
+);
+$elements_pics = array(
+    site_url('assets/img/sport.jpg'),
+    site_url('assets/img/music.jpg'),
+    site_url('assets/img/paint.jpg')
+);
+echo $this->formulize->create('Type Pic', 'typepic', 'selectpic', '', $elements, $elements_pics)->render();
 
 $elements = array(
     'sports'     => 'Sports',
