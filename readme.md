@@ -23,7 +23,7 @@ In the view:
 
 ```php
 // $this->formulize->create($name, $varname, $type, $value, $select_elements, $select_pics);
-// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'selectpic', 'list', 'tags', 'number' or 'email'
+// $type could be 'txt', 'html', 'date', 'file', 'checkbox', 'select', 'selectpic', 'list', 'tags', 'number', 'email', 'color' or 'password'
 // $value paramter is optional.
 // $select_elements is required if $type is 'select', 'selectpic' or 'list'
 // $select_pics is required if $type is 'selectpic'
@@ -69,6 +69,8 @@ echo $this->formulize->create('Tags', 'tags', 'tags')->render();
 echo $this->formulize->create('Order', 'order', 'number')->render();
 
 echo $this->formulize->create('Email', 'email', 'email')->render();
+
+echo $this->formulize->create('Password', 'password', 'password')->render();
 
 echo $this->formulize->create('Color code', 'color', 'color')->render();
 ```
